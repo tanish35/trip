@@ -19,10 +19,12 @@ export default function CustomTripPage() {
   const [itinerary, setItinerary] = useState("");
   const [loading, setLoading] = useState(false);
 
-  const handleChange = (e: any) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
+  ) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
-
+  
   const handleSubmit = async () => {
     try {
       setLoading(true);
